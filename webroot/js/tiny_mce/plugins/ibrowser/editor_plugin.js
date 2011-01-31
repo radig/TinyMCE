@@ -11,22 +11,28 @@ ib = null;
 	tinymce.create('tinymce.plugins.IBrowserPlugin', {
 		init : function(ed, url) {
 			// load common script
-			tinymce.ScriptLoader.load(url + '/interface/common.js');
-			
+		
+			/*
+			 * tinymce.ScriptLoader.load(url + '/interface/common.js'); doesn't work.  
+			 * Replaced by code below
+			 */ 
+			 tinymce.ScriptLoader.add(url + '/interface/common.js');
+			 tinymce.ScriptLoader.loadQueue();
+
 			// Register commands
 			ed.addCommand('mceIBrowser', function() {
 				var e = ed.selection.getNode();
 
 				// Internal image object like a flash placeholder
 				if (ed.dom.getAttrib(ed.selection.getNode(), 'class').indexOf('mceItem') != -1) {return}
-
+				
 				ib.isMSIE  = tinymce.isIE;
 				ib.isGecko = tinymce.isGecko;
 				ib.isWebKit= tinymce.isWebKit;
 				ib.oEditor = ed; 
 				ib.editor  = ed;
 				ib.selectedElement = e;					
-				ib.baseURL = url + '/ibrowser.php';	
+				ib.baseURL = url + '/ibrowser.php';
 				iBrowser_open();
 			});
 
@@ -57,3 +63,4 @@ ib = null;
 	// Register plugin
 	tinymce.PluginManager.add('ibrowser', tinymce.plugins.IBrowserPlugin);
 })();	
+
