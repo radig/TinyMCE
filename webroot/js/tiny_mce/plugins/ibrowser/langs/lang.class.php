@@ -71,8 +71,7 @@ class PLUG_Lang {
 		$this -> dir = $lang_direction;
 		$this -> lang_data = $lang_data;
 		unset( $lang_data );
-		include( dirname(__FILE__) . '/' . $cfg['lang'].'.php' );
-		$this -> default_lang_data = $lang_data;
+		$this -> default_lang_data = $this -> lang_data;
 	}
 
 	// return message
