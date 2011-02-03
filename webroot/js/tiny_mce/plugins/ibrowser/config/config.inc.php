@@ -23,7 +23,7 @@
 	//  see readme.txt for further instructions	
 	
 	//-------------------------------------------------------------------------	
-	$cfg['lang']   		= 'pt';														// default language; e.g. 'en'		
+	$cfg['lang']   		= 'pt_br';														// default language; e.g. 'en'		
 	$cfg['valid']  		= array('gif', 'jpg', 'jpeg', 'png');						// valid extentions for image files	
 	$cfg['upload'] 		= true; 													// allow uploading of image: 'true' or 'false'
 	$cfg['umax'] 		= 4;														// max. number of image files to be uploaded; default: 1; value > 1
@@ -107,9 +107,9 @@
 	//-------------------------------------------------------------------------
 	// use dynamic image libraries - if $cfg['ilibs_inc'] is set, static image libraries above are ignored
 	// image directories to be scanned
-	$cfg['ilibs_dir'] 	   = array('/home/dotti/develop/php/cake13/advocacia/uploads/');						   	// image library path with slashes; absolute to root directory - please make sure that the directories have write permissions
+	$cfg['ilibs_dir'] 	   = array(APP . '/attachments');						   	// image library path with slashes; absolute to root directory - please make sure that the directories have write permissions
 	$cfg['ilibs_dir_show'] = true;														// show main library (true) or only sub-dirs (false)
-	$cfg['ilibs_inc']      = '/uploads/'; 	// file to include in ibrowser.php (useful for setting $cfg['ilibs] dynamically
+	$cfg['ilibs_inc']      = ''; 	// file to include in ibrowser.php (useful for setting $cfg['ilibs] dynamically
 	//-------------------------------------------------------------------------
 	// you shouldn't need to make any changes to the config variable beyond this line!
 	//-------------------------------------------------------------------------
