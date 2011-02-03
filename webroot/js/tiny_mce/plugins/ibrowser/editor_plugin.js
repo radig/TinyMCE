@@ -34,6 +34,7 @@ ib = null;
 				ib.selectedElement = e;					
 				ib.baseURL = url + '/ibrowser.php';
 				iBrowser_open();
+				console.debug(ib.baseURL);
 			});
 
 			// Register buttons
